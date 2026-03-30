@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Scene Container ===== */
+.scene {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  background-color: #e8f5e9; /* light green background */
+  border: 3px solid #999;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ===== Flower Container ===== */
+/* The flower is positioned near the top-center */
+.flower {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+}
+
+/* ===== Petals ===== */
+/* Each petal is an oval shape placed around the center */
+.petal {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff6b6b; /* red-pink color */
+  border-radius: 50% 50% 50% 0; /* teardrop shape */
+  border: 2px solid #e05555;
+}
+
+/* Position each petal around the center */
+.petal-top {
+  top: 0;
+  left: 35px;
+  transform: rotate(-45deg);
+}
+
+.petal-right {
+  top: 35px;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+.petal-bottom {
+  bottom: 0;
+  left: 35px;
+  transform: rotate(135deg);
+}
+
+.petal-left {
+  top: 35px;
+  left: 0;
+  transform: rotate(-135deg);
+}
+
+.petal-top-right {
+  top: 5px;
+  right: 5px;
+  transform: rotate(0deg);
+}
+
+.petal-top-left {
+  top: 5px;
+  left: 5px;
+  transform: rotate(-90deg);
+}
+
+.petal-bottom-right {
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(90deg);
+}
+
+.petal-bottom-left {
+  bottom: 5px;
+  left: 5px;
+  transform: rotate(180deg);
+}
+
+/* ===== Flower Center ===== */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffd93d; /* yellow */
+  border-radius: 50%;
+  border: 2px solid #e6c235;
+}
+
+/* ===== Stem ===== */
+.stem {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 150px;
+  background-color: #4caf50; /* green */
+  border-radius: 4px;
+}
+
+/* ===== Leaves ===== */
+/* Leaves are ovals rotated and placed on each side of the stem */
+.leaf {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background-color: #66bb6a; /* lighter green */
+  border-radius: 50% 50% 50% 0;
+  border: 2px solid #4caf50;
+}
+
+/* Left leaf */
+.leaf-left {
+  top: 270px;
+  left: 148px;
+  transform: rotate(-40deg);
+}
+
+/* Right leaf */
+.leaf-right {
+  top: 300px;
+  right: 148px;
+  transform: rotate(130deg);
+}
+
+/* ===== Flower Pot ===== */
+.pot-rim {
+  /* position: absolute; */
+  bottom: 68px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 20px;
+  background-color: #d2691e; /* brown */
+  border-radius: 4px;
+  border: 2px solid #a0522d;
+}
+
+.pot-body {
+  /* position: absolute; */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  background-color: #cd853f; /* lighter brown */
+  border-radius: 0 0 15px 15px;
+  border: 2px solid #a0522d;
+  border-top: none;
+}
+.pot{
+    position: absolute;
+    bottom: 15% ;
+    left: 50%;
+}
+

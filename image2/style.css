@@ -1,0 +1,291 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== SCENE (the canvas) ===== */
+.scene {
+    width: 500px;
+    height: 400px;
+    background-color: #87CEEB;
+    /* light blue sky */
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #333;
+    border-radius: 8px;
+}
+
+/* ===== SUN ===== */
+.sun {
+    width: 60px;
+    height: 60px;
+    background-color: #FFD700;
+    /* gold */
+    border-radius: 50%;
+    /* makes it a circle */
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+/* ===== GROUND ===== */
+.ground {
+    width: 100%;
+    height: 120px;
+    background-color: #4CAF50;
+    /* green grass */
+    position: absolute;
+    bottom: 0;
+}
+
+/* ===== PATH (walkway to door) ===== */
+.path {
+    width: 50px;
+    height: 80px;
+    background-color: #D2B48C;
+    /* tan */
+    position: absolute;
+    bottom: 0;
+    left: 225px;
+    /* centered under door */
+}
+
+/* ===== HOUSE ===== */
+.house {
+    position: absolute;
+    bottom: 120px;
+    /* sits on top of ground */
+    left: 130px;
+}
+
+/* -- Roof (triangle using borders) -- */
+.roof {
+    width: 0;
+    height: 0;
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+    border-bottom: 80px solid #B22222;
+    /* dark red */
+    position: relative;
+    left: -15px;
+    z-index: 2;
+    /* extend roof past walls */
+}
+
+/* -- Chimney -- */
+.chimney {
+    width: 25px;
+    height: 50px;
+    background-color: #8B4513;
+    /* brown */
+    position: absolute;
+    top: 0px;
+    right: 70px;
+    
+}
+
+/* -- Wall -- */
+.wall {
+    width: 230px;
+    height: 140px;
+    background-color: #FAEBD7;
+    /* antique white */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #333;
+}
+
+/* ===== WINDOWS ===== */
+.window {
+    width: 50px;
+    height: 50px;
+    background-color: #ADD8E6;
+    /* light blue glass */
+    border: 3px solid #333;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* -- Each pane is 1/4 of the window -- */
+.pane {
+    width: 50%;
+    height: 50%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+/* ===== DOOR ===== */
+.door {
+    width: 45px;
+    height: 80px;
+    background-color: #8B4513;
+    /* brown */
+    border: 2px solid #333;
+    position: relative;
+    align-self: flex-end;
+}
+
+/* -- Doorknob -- */
+.doorknob {
+    width: 8px;
+    height: 8px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    position: absolute;
+    right: 6px;
+    top: 38px;
+}
+
+/* ===== FENCE ===== */
+.fence {
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
+    width: 90px;
+    height: 50px;
+}
+
+/* -- Fence posts -- */
+.post {
+    width: 8px;
+    height: 50px;
+    background-color: #DEB887;
+    /* burlywood */
+    border: 1px solid #A0522D;
+    position: absolute;
+    bottom: 0;
+}
+
+.post:nth-child(1) {
+    left: 0;
+}
+
+.post:nth-child(2) {
+    left: 20px;
+}
+
+.post:nth-child(3) {
+    left: 40px;
+}
+
+.post:nth-child(4) {
+    left: 60px;
+}
+
+.post:nth-child(5) {
+    left: 80px;
+}
+
+/* -- Fence rails -- */
+.rail {
+    width: 88px;
+    height: 6px;
+    background-color: #DEB887;
+    border: 1px solid #A0522D;
+    position: absolute;
+    left: 0;
+}
+
+.top-rail {
+    top: 10px;
+}
+
+.bottom-rail {
+    top: 30px;
+}
+
+/* ===== FLOWERS ===== */
+.flower {
+    position: absolute;
+    bottom: 120px;
+}
+
+.flower-1 {
+    right: 40px;
+}
+
+.flower-2 {
+    right: 70px;
+}
+
+.flower-3 {
+    right: 100px;
+}
+
+/* -- Stem -- */
+.stem {
+    width: 4px;
+    height: 30px;
+    background-color: #228B22;
+    /* forest green */
+    margin: 0 auto;
+}
+
+/* -- Petals (4 circles around center) -- */
+.petal {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.flower-1 .petal {
+    background-color: #FF6347;
+}
+
+/* red flower */
+.flower-2 .petal {
+    background-color: #DA70D6;
+}
+
+/* purple flower */
+.flower-3 .petal {
+    background-color: #FF6347;
+}
+
+/* red flower */
+
+.p1 {
+    top: -6px;
+    left: 4px;
+}
+
+.p2 {
+    top: 6px;
+    left: -4px;
+}
+
+.p3 {
+    top: 6px;
+    left: 12px;
+}
+
+.p4 {
+    top: 18px;
+    left: 4px;
+}
+
+/* -- Flower center -- */
+.center {
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+}
+
+/* ===== LABEL ===== */
+.label {
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}

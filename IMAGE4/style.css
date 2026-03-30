@@ -1,0 +1,147 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.label {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: hsl(40, 20%, 50%);
+}
+
+.scene {
+  position: relative;
+  width: 480px;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+
+}
+
+/* Sky */
+.sky {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg,
+    hsl(240,40%,20%) 0%, hsl(270,50%,35%) 25%,
+    hsl(15,100%,55%) 65%, hsl(40,90%,65%) 55%,
+    hsl(15,100%,55%) 10%);
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(45, 48%, 63%), hsl(30,100%,60%));
+  top: 35%; right: 10%;
+  transform: translate(-50%,-50%);
+  
+}
+
+
+/* Clouds */
+.cloud {
+  position: relative;
+  /* background: hsla(280,30%,60%,0.3); */
+  border-radius: 50px;
+  animation: cloud-drift 20s linear infinite;
+}
+
+.innerclouds1{
+  position: fixed;
+  top: -50%;
+  height: 30px;
+  width: 50px;
+  border-radius: 100%;
+
+  background-color: hsla(280,30%,60%,0.5);
+}
+.innerclouds2{
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  height: 20px;
+  width: 50px;
+  border-radius: 100%;
+
+  background-color: hsla(280,30%,60%,0.3);
+}
+.cloud-1 { width: 80px; height: 20px; top: 15%; left: -80px; }
+
+.cloud-2 { width: 60px; height: 16px; top: 22%; left: -60px; animation-delay: -8s; animation-duration: 25s; }
+
+@keyframes cloud-drift { from { transform: translateX(0); } to { transform: translateX(600px); } }
+
+/* Mountains */
+.mountain { position: absolute; bottom: 30%; width: 0; height: 0; border-style: solid; }
+.mountain-back  { left: 15%; border-width: 0 140px 120px 140px; border-color: transparent transparent hsl(259, 41%, 29%) transparent; }
+.mountain-front { left: 40%; border-width: 0 120px 100px 120px; border-color: transparent transparent hsl(270, 37%, 37%) transparent; }
+
+/* Ground */
+.ground {
+  position: absolute; bottom: 0; width: 100%; height: 30%;
+  background: linear-gradient(180deg, hsl(131, 53%, 22%) 0%, hsl(141, 25%, 18%) 100%);
+}
+
+/* Water */
+.water {
+  position: absolute; bottom: 0; left: 25%; width: 50%; height: 28%;
+  background: linear-gradient(180deg, hsla(25,80%,50%,0.4) 0%, hsla(220,50%,20%,0.6) 100%);
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+}
+.reflection {
+  position: absolute; width: 4px; height: 80%; top: 5%; left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, hsla(45,100%,85%,0.6), hsla(45,100%,85%,0.1));
+  filter: blur(3px);
+  animation: shimmer 2s ease-in-out infinite;
+}
+@keyframes shimmer { 0%,100% { opacity: 0.6; height: 80%; } 50% { opacity: 1; height: 85%; } }
+.ripple {
+  position: absolute;
+  border: 1px solid hsla(40,80%,70%,0.2);
+  border-radius: 50%;
+  animation: ripple-out 3s ease-out infinite;
+}
+.ripple-1 { width: 30px; height: 8px;  top: 30%; left: 45%; animation-delay: 0s; }
+.ripple-2 { width: 50px; height: 10px; top: 50%; left: 35%; animation-delay: 1s; }
+.ripple-3 { width: 40px; height: 8px;  top: 70%; left: 50%; animation-delay: 2s; }
+@keyframes ripple-out { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(2); opacity: 0; } }
+
+/* Trees */
+.tree { position: absolute; bottom: 30%; }
+.tree .trunk {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 6px; height: 30px; background: hsl(30,30%,15%); border-radius: 2px;
+}
+.tree .foliage {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0; border-style: solid;
+}
+.tree .f1 { bottom: 20px; border-width: 0 18px 30px 18px; border-color: transparent transparent hsl(150,35%,16%) transparent; }
+.tree .f2 { bottom: 35px; border-width: 0 14px 25px 14px; border-color: transparent transparent hsl(145,30%,20%) transparent; }
+.tree .f3 { bottom: 48px; border-width: 0 10px 20px 10px; border-color: transparent transparent hsl(140,25%,24%) transparent; }
+.tree-1 { left: 8%; }
+.tree-2 { right: 10%; }
+
+/* Birds */
+.bird {
+  position: absolute; width: 14px; height: 4px;
+  border-top: 2px solid hsl(0,0%,10%);
+  border-radius: 50% 50% 0 0;
+  border-left: none; border-right: none;
+  animation: fly 6s ease-in-out infinite;
+}
+
+.bird-1 { top: 18%; left: 30%; }
+.bird-2 { top: 14%; left: 55%; animation-delay: 1s; transform: scale(0.7); }
+.bird-3 { top: 20%; left: 65%; animation-delay: 2s; transform: scale(0.5); }

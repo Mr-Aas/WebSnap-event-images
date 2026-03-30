@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f0e6d3;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Scene Container ===== */
+.scene {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== Cat Head ===== */
+.head {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    background-color: #ff9933;
+    border-radius: 50% 50% 45% 45%;
+    border: 3px solid #cc7a29;
+    z-index: 2;
+}
+
+/* ===== Ears ===== */
+/* Ears are triangles made with CSS borders */
+.ear {
+    position: absolute;
+    top: -30px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 45px solid #ff9933;
+}
+
+.ear-left {
+    left: 15px;
+}
+
+.ear-right {
+    right: 15px;
+}
+
+/* Pink inner ear */
+.ear-inner {
+    position: absolute;
+    top: 12px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid #ffb3b3;
+}
+
+/* ===== Eyes ===== */
+.eye {
+    position: absolute;
+    top: 60px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.eye-left {
+    left: 35px;
+}
+
+.eye-right {
+    right: 35px;
+}
+
+/* Black pupil inside each eye */
+.pupil {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 16px;
+    height: 20px;
+    background-color: #222;
+    border-radius: 50%;
+}
+
+/* ===== Nose ===== */
+/* Small pink triangle nose */
+.nose {
+    position: absolute;
+    top: 105px;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid #ff6680;
+}
+
+/* ===== Mouth ===== */
+/* Two curved lines below the nose */
+.mouth-left {
+    position: absolute;
+    top: 113px;
+    left: 50%;
+    margin-left: -15px;
+    width: 15px;
+    height: 12px;
+    border-bottom: 2px solid #333;
+    border-radius: 0 0 0 50%;
+}
+
+.mouth-right {
+    position: absolute;
+    top: 113px;
+    left: 50%;
+    width: 15px;
+    height: 12px;
+    border-bottom: 2px solid #333;
+    border-radius: 0 0 50% 0;
+}
+
+/* ===== Whiskers ===== */
+/* Simple lines using thin rectangles */
+.whisker {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+}
+
+.whisker-left-top {
+    top: 100px;
+    left: -25px;
+    transform: rotate(10deg);
+}
+
+.whisker-left-bottom {
+    top: 115px;
+    left: -25px;
+    transform: rotate(-10deg);
+}
+
+.whisker-right-top {
+    top: 100px;
+    right: -25px;
+    transform: rotate(-10deg);
+}
+
+.whisker-right-bottom {
+    top: 115px;
+    right: -25px;
+    transform: rotate(10deg);
+}
+
+/* ===== Cheeks ===== */
+/* Soft pink circles on each side */
+.cheek {
+    position: absolute;
+    top: 110px;
+    width: 30px;
+    height: 20px;
+    background-color: #ffb3b3;
+    border-radius: 50%;
+}
+
+.cheek-left {
+    left: 20px;
+}
+
+.cheek-right {
+    right: 20px;
+}
+
+/* ===== Body ===== */
+.body {
+    position: relative;
+    width: 160px;
+    height: 120px;
+    background-color: #ff9933;
+    border-radius: 0 0 50% 50%;
+    border: 3px solid #cc7a29;
+    border-top: none;
+    margin-top: -10px;
+    z-index: 1;
+}
+
+/* ===== Paws ===== */
+/* Small round paws at the bottom */
+.paw {
+    position: absolute;
+    bottom: -10px;
+    width: 40px;
+    height: 25px;
+    background-color: #ff9933;
+    border-radius: 50%;
+    border: 3px solid #cc7a29;
+}
+
+.paw-left {
+    left: 15px;
+}
+
+.paw-right {
+    right: 15px;
+}
+
+/* ===== Tail ===== */
+/* A curved tail on the right side */
+.tail {
+    position: absolute;
+    bottom: 130px;
+    right: 80px;
+    width: 80px;
+    height: 40px;
+    border: 4px solid #cc7a29;
+    border-color: transparent transparent #cc7a29 transparent;
+    border-radius: 0 0 50% 50%;
+    background-color: transparent;
+    z-index: 0;
+}
